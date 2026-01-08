@@ -100,4 +100,39 @@ footer {
   text-decoration: none;
 }
 
+/* GOOGLE MAPS BUTTON */
+.map-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 20px;
+  padding: 14px 28px;
+
+  background: linear-gradient(135deg, #34a853, #0f9d58);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  border-radius: 40px;
+  text-decoration: none;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover / Tap effect */
+.map-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile tap feedback */
+.map-button:active {
+  transform: scale(0.96);
+}
+
+
+
 
