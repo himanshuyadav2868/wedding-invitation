@@ -115,45 +115,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const cover = document.getElementById("cover");
   const enterBtn = document.getElementById("enterBtn");
 
+  if (!cover) return;
+
+  document.body.classList.add("cover-active");
+
   let entered = false;
+  let touchStartY = 0;
 
   function enterInvitation() {
     if (entered) return;
     entered = true;
 
     cover.classList.add("hide-cover");
+    document.body.classList.remove("cover-active");
 
     setTimeout(() => {
       cover.style.display = "none";
     }, 800);
   }
 
-  // Button click
+  /* BUTTON */
   if (enterBtn) {
     enterBtn.addEventListener("click", enterInvitation);
   }
 
-  // Desktop scroll
-  window.addEventListener("wheel", (e) => {
-    if (!entered && e.deltaY > 20) {
+  /* DESKTOP SCROLL (mouse / trackpad) */
+  cover.addEventListener("wheel", (e) => {
+    if (e.deltaY > 10) {
       enterInvitation();
     }
-  }, { passive: true });
+  });
 
-  // Mobile swipe
-  let touchStartY = null;
-
-  window.addEventListener("touchstart", (e) => {
+  /* MOBILE SWIPE */
+  cover.addEventListener("touchstart", (e) => {
     touchStartY = e.touches[0].clientY;
-  }, { passive: true });
+  }, { passive: false });
 
-  window.addEventListener("touchmove", (e) => {
-    if (touchStartY === null || entered) return;
-
+  cover.addEventListener("touchmove", (e) => {
     const diffY = touchStartY - e.touches[0].clientY;
 
-    if (diffY > 50) { // swipe up threshold
+    if (diffY > 50) {
       enterInvitation();
     }
-  }, { passive: true });
+  }, { passive: false });
 });
