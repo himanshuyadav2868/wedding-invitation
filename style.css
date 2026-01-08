@@ -161,6 +161,59 @@ footer {
   transform: scale(0.97);
 }
 
+/* COVER SCREEN */
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #000;
+}
+
+.cover-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cover-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.cover-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cover-overlay button {
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  background: #ff6f91;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.cover-overlay button:hover {
+  transform: scale(1.05);
+}
+
 
 
 
