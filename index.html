@@ -71,11 +71,19 @@
 
   <!-- LOCATION -->
   <section class="location">
-    <h2>Venue Location</h2>
-    <button id="locationBtn">View Location</button>
-    <div id="locationAnimation" class="lottie hidden"></div>
-    <a id="mapLink" target="_blank">Open in Google Maps</a>
-  </section>
+  <h2>Venue Locations</h2>
+
+  <div class="location-buttons">
+    <button data-type="lagan">📍 Lagan Location</button>
+    <button data-type="wedding">📍 Wedding Location</button>
+  </div>
+
+  <div id="locationAnimation" class="lottie hidden"></div>
+
+  <a id="mapLink" target="_blank" class="map-link hidden">
+    Open in Google Maps
+  </a>
+</section>
 
   <footer>
     <p>We look forward to celebrating with you ❤️</p>
@@ -84,5 +92,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
