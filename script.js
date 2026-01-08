@@ -110,6 +110,21 @@ document.querySelectorAll(".animate-on-scroll").forEach(el => {
   observer.observe(el);
 });
 
+const cover = document.getElementById("cover");
+const enterBtn = document.getElementById("enterBtn");
+
+enterBtn.addEventListener("click", () => {
+  cover.style.transition = "opacity 0.8s ease";
+  cover.style.opacity = "0";
+  cover.style.pointerEvents = "none";
+
+  setTimeout(() => {
+    cover.style.display = "none";
+  }, 800);
+});
+
+
+
 
 
 
