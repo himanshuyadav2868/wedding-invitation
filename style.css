@@ -227,5 +227,10 @@ footer {
     transform: scale(1.25); /* 👈 bigger on phones */
   }
 }
+body.cover-active {
+  overflow: hidden;
+}
+
+
 
 
