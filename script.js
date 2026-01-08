@@ -115,21 +115,45 @@ document.addEventListener("DOMContentLoaded", () => {
   const cover = document.getElementById("cover");
   const enterBtn = document.getElementById("enterBtn");
 
-  if (!cover || !enterBtn) {
-    console.error("Cover or Enter button missing");
-    return;
-  }
+  let entered = false;
 
-  enterBtn.addEventListener("click", () => {
-    console.log("Enter button clicked");
+  function enterInvitation() {
+    if (entered) return;
+    entered = true;
 
     cover.classList.add("hide-cover");
 
     setTimeout(() => {
       cover.style.display = "none";
     }, 800);
-  });
+  }
+
+  // Button click
+  if (enterBtn) {
+    enterBtn.addEventListener("click", enterInvitation);
+  }
+
+  // Desktop scroll
+  window.addEventListener("wheel", (e) => {
+    if (!entered && e.deltaY > 20) {
+      enterInvitation();
+    }
+  }, { passive: true });
+
+  // Mobile swipe
+  let touchStartY = null;
+
+  window.addEventListener("touchstart", (e) => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  window.addEventListener("touchmove", (e) => {
+    if (touchStartY === null || entered) return;
+
+    const diffY = touchStartY - e.touches[0].clientY;
+
+    if (diffY > 50) { // swipe up threshold
+      enterInvitation();
+    }
+  }, { passive: true });
 });
-
-
-
