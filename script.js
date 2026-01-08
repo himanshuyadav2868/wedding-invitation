@@ -42,20 +42,43 @@ setInterval(() => {
 }, 1000);
 
 // LOCATION
-const locationBtn = document.getElementById("locationBtn");
-const locationAnim = document.getElementById("locationAnimation");
+const locations = {
+  lagan: {
+    map: "https://maps.google.com/?q=ENTER_LAGAN_LOCATION",
+    animation: "animations/lagan-location.json"
+  },
+  wedding: {
+    map: "https://maps.google.com/?q=ENTER_WEDDING_LOCATION",
+    animation: "animations/wedding-location.json"
+  }
+};
 
-locationBtn.addEventListener("click", () => {
-  locationAnim.classList.remove("hidden");
+const buttons = document.querySelectorAll(".location-buttons button");
+const locationAnimContainer = document.getElementById("locationAnimation");
+const mapLink = document.getElementById("mapLink");
 
-  lottie.loadAnimation({
-    container: locationAnim,
-    renderer: "svg",
-    loop: false,
-    autoplay: true,
-    path: "animations/location.json"
+let currentAnimation = null;
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const type = btn.dataset.type;
+
+    // Clear previous animation
+    locationAnimContainer.innerHTML = "";
+    locationAnimContainer.classList.remove("hidden");
+    mapLink.classList.remove("hidden");
+
+    if (currentAnimation) currentAnimation.destroy();
+
+    currentAnimation = lottie.loadAnimation({
+      container: locationAnimContainer,
+      renderer: "svg",
+      loop: false,
+      autoplay: true,
+      path: locations[type].animation
+    });
+
+    mapLink.href = locations[type].map;
   });
-
-  document.getElementById("mapLink").href =
-    "https://maps.google.com";
 });
+
