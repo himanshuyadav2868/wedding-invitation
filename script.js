@@ -44,15 +44,16 @@ setInterval(() => {
 // LOCATION
 const locations = {
   lagan: {
-    map: "https://maps.app.goo.gl/LnxtseDMNt4USsDWA",
+    venue: "Lagan Ceremony Venue",
+    map: "https://maps.google.com/?q=ENTER_LAGAN_LOCATION",
     animation: "animations/lagan-location.json"
   },
   wedding: {
-    map: "https://maps.app.goo.gl/q92Qezh9k9zRQ8hZ7",
+    venue: "Wedding Ceremony Venue",
+    map: "https://maps.google.com/?q=ENTER_WEDDING_LOCATION",
     animation: "animations/wedding-location.json"
   }
 };
-
 const buttons = document.querySelectorAll(".location-buttons button");
 const locationAnimContainer = document.getElementById("locationAnimation");
 const mapLink = document.getElementById("mapLink");
@@ -62,11 +63,11 @@ let currentAnimation = null;
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
     const type = btn.dataset.type;
+    const data = locations[type];
 
-    // Clear previous animation
+    // Reset animation container
     locationAnimContainer.innerHTML = "";
     locationAnimContainer.classList.remove("hidden");
-    mapLink.classList.remove("hidden");
 
     if (currentAnimation) currentAnimation.destroy();
 
@@ -75,11 +76,18 @@ buttons.forEach(btn => {
       renderer: "svg",
       loop: false,
       autoplay: true,
-      path: locations[type].animation
+      path: data.animation
     });
 
-    mapLink.href = locations[type].map;
+    // Update map button
+    mapLink.href = data.map;
+    mapLink.innerHTML = `🗺 Navigate to <strong>${data.venue}</strong>`;
+    mapLink.classList.remove("hidden");
+
+    // Trigger button animation
+    mapLink.classList.remove("pulse");
+    void mapLink.offsetWidth; // force reflow
+    mapLink.classList.add("pulse");
   });
 });
-
 
