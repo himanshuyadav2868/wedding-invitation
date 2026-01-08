@@ -145,6 +145,24 @@ footer {
   transform: translateY(0);
 }
 
+/* EVENT CARD ANIMATIONS */
+.event-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Desktop hover */
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile tap feedback */
+.event-card:active {
+  transform: scale(0.97);
+}
+
+
+
 
 
 
