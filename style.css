@@ -85,3 +85,19 @@ footer {
   color: #fff;
   padding: 30px;
 }
+.location-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #ff6f91;
+  text-decoration: none;
+}
+
+
