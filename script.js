@@ -44,12 +44,12 @@ setInterval(() => {
 // LOCATION
 const locations = {
   lagan: {
-    venue: "Lagan Ceremony Venue",
+    venue: "MD PALACE , rewari",
     map: "https://maps.google.com/?q=ENTER_LAGAN_LOCATION",
     animation: "animations/lagan-location.json"
   },
   wedding: {
-    venue: "Wedding Ceremony Venue",
+    venue: "Utsav vatika , dwarka",
     map: "https://maps.google.com/?q=ENTER_WEDDING_LOCATION",
     animation: "animations/wedding-location.json"
   }
@@ -90,4 +90,5 @@ buttons.forEach(btn => {
     mapLink.classList.add("pulse");
   });
 });
+
 
