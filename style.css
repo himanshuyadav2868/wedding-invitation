@@ -161,25 +161,10 @@ footer {
   transform: scale(0.97);
 }
 
-/* COVER SCREEN */
-.cover {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  overflow: hidden;
-  background: #000;
-}
-
-.cover-media {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Overlay tuned for portrait wedding photo */
 .cover-overlay {
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     to bottom,
     rgba(0,0,0,0.35),
@@ -191,52 +176,26 @@ footer {
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 60px 20px;
-}
+  justify-content: center;   /* 👈 CENTER VERTICALLY */
+  align-items: center;       /* 👈 CENTER HORIZONTALLY */
 
-.cover-top {
-  letter-spacing: 2px;
-  font-size: 0.9rem;
-  opacity: 0.9;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+  padding: 20px;
+  z-index: 2;                /* 👈 VERY IMPORTANT */
 }
-
-.cover-overlay h1 {
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.cover-date {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-  font-style: italic;
-}
-
-.cover-overlay button {
-  padding: 14px 36px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 40px;
-  background: #ffffff;
-  color: #000;
-  cursor: pointer;
-  font-weight: 500;
-  align-self: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cover-overlay button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-.cover-overlay {
-  pointer-events: auto;
-}
-
 .cover-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  pointer-events: none;   /* 👈 THIS IS THE KEY FIX */
+  z-index: 1;
+}
+.cover-overlay button {
+  pointer-events: auto;
+  z-index: 3;
+}
+.hide-cover {
+  opacity: 0;
+  transition: opacity 0.8s ease;
   pointer-events: none;
 }
-
