@@ -44,11 +44,11 @@ setInterval(() => {
 // LOCATION
 const locations = {
   lagan: {
-    map: "https://maps.google.com/?q=ENTER_LAGAN_LOCATION",
+    map: "https://maps.app.goo.gl/LnxtseDMNt4USsDWA",
     animation: "animations/lagan-location.json"
   },
   wedding: {
-    map: "https://maps.google.com/?q=ENTER_WEDDING_LOCATION",
+    map: "https://maps.app.goo.gl/q92Qezh9k9zRQ8hZ7",
     animation: "animations/wedding-location.json"
   }
 };
@@ -81,4 +81,5 @@ buttons.forEach(btn => {
     mapLink.href = locations[type].map;
   });
 });
+
 
