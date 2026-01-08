@@ -216,4 +216,16 @@ footer {
   z-index: 9999;
 }
 
+/* COVER CONTENT SCALE */
+.cover-content {
+  transform: scale(1.15);   /* 👈 increase overall size */
+}
+
+/* Mobile-specific boost */
+@media (max-width: 768px) {
+  .cover-content {
+    transform: scale(1.25); /* 👈 bigger on phones */
+  }
+}
+
 
