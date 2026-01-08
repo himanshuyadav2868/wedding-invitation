@@ -109,22 +109,24 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".animate-on-scroll").forEach(el => {
   observer.observe(el);
 });
+//cober
+document.addEventListener("DOMContentLoaded", () => {
+  const cover = document.getElementById("cover");
+  const enterBtn = document.getElementById("enterBtn");
 
-const cover = document.getElementById("cover");
-const enterBtn = document.getElementById("enterBtn");
+  if (!cover || !enterBtn) {
+    console.error("Cover or Enter button not found");
+    return;
+  }
 
-enterBtn.addEventListener("click", () => {
-  cover.style.transition = "opacity 0.8s ease";
-  cover.style.opacity = "0";
-  cover.style.pointerEvents = "none";
+  enterBtn.addEventListener("click", () => {
+    cover.style.transition = "opacity 0.8s ease";
+    cover.style.opacity = "0";
+    cover.style.pointerEvents = "none";
 
-  setTimeout(() => {
-    cover.style.display = "none";
-  }, 800);
+    setTimeout(() => {
+      cover.style.display = "none";
+    }, 800);
+  });
 });
-
-
-
-
-
 
