@@ -120,7 +120,30 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("cover-active");
 
   let entered = false;
-  let touchStartY = 0;
+  //let touchStartY = 0;
+
+  function enterInvitation() {
+    if (entered) return;
+    entered = true;
+
+    cover.classList.add("hide-cover");
+    document.body.classList.remove("cover-active");
+
+    setTimeout(() => {
+      cover.style.display = "none";
+    }, 800);
+  }
+  // ENTER SITE — works on mobile + desktop
+cover.addEventListener("touchstart", enterInvitation, { once: true });
+cover.addEventListener("click", enterInvitation, { once: true });
+//cover
+document.addEventListener("DOMContentLoaded", () => {
+  const cover = document.getElementById("cover");
+  if (!cover) return;
+
+  document.body.classList.add("cover-active");
+
+  let entered = false;
 
   function enterInvitation() {
     if (entered) return;
@@ -134,11 +157,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 800);
   }
 
+  // Mobile tap
+  cover.addEventListener("touchstart", enterInvitation, { once: true });
+
+  // Desktop click
+  cover.addEventListener("click", enterInvitation, { once: true });
+});
+
+
   
 
   /* MOBILE touch cover remove */
-   cover.addEventListener("touchstart", (e) => {
-    touchStartY = e.touches[0].clientY;
+  // cover.addEventListener("touchstart", (e) => {
+    /*touchStartY = e.touches[0].clientY;
   }, { passive: false });
 
   cover.addEventListener("touchmove", (e) => {
@@ -148,7 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
       enterInvitation();
     }
   }, { passive: false });
-});
+});*/
+
 
 
 
