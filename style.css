@@ -494,6 +494,75 @@ body.cover-active {
     transform: translateY(0) scale(1);
   }
 }
+/* LOCATION SECTION */
+.location {
+  background: #fafafa;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* Cards layout */
+.location-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Individual card */
+.location-card {
+  text-align: center;
+  max-width: 260px;
+}
+
+/* Venue name below button */
+.venue-name {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+/* ========= LOCATION BUTTON ANIMATIONS ========= */
+
+/* OPTION 2: Entrance animation (runs once on scroll) */
+.animate-on-scroll.visible .map-button {
+  animation: pulseOnce 0.8s ease-out forwards,
+             gentleFloat 4s ease-in-out infinite 1s;
+}
+
+/* Pop-in effect */
+@keyframes pulseOnce {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* OPTION 1: Gentle floating (idle) */
+@keyframes gentleFloat {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
 
 
 
