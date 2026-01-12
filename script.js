@@ -134,17 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 800);
   }
 
-  /* BUTTON */
-  if (enterBtn) {
-    enterBtn.addEventListener("click", enterInvitation);
-  }
-
-  /* DESKTOP SCROLL (mouse / trackpad) */
-  cover.addEventListener("wheel", (e) => {
-    if (e.deltaY > 10) {
-      enterInvitation();
-    }
-  });
+  
 
   /* MOBILE touch cover remove */
    cover.addEventListener("touchstart", (e) => {
@@ -159,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { passive: false });
 });
+
 
 
 
