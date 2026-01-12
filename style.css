@@ -77,37 +77,6 @@ section {
 /* NAMES */
 /* HERO NAMES – FINAL POLISHED VERSION */
 /* HERO NAMES – FINAL FIXED VERSION */
-.hero-names {
-  font-family: "Playfair Display", serif;
-  font-size: 2.6rem;
-  font-weight: 600;
-
-  white-space: nowrap;
-  max-width: 100%;
-  margin: 28px 0 32px 0;
-
-  letter-spacing: 0.9em; /* 👈 FIX: more breathing room */
-
-  opacity: 0;
-  animation: nameEnter 3s ease-out forwards;
-  animation-delay: 1.5s;
-}
-@media (max-width: 420px) {
-  .hero-names {
-    transform: scale(0.85);
-  }
-}
-
-
-/* Ampersand glow only */
-.hero-names .amp {
-  font-weight: 400;
-  margin: 0 8px;
-  color: #f3e6c8;
-  text-shadow:
-    0 0 6px rgba(243, 230, 200, 0.35),
-    0 0 14px rgba(243, 230, 200, 0.25);
-}
 @keyframes nameEnter {
   from {
     opacity: 0;
@@ -398,9 +367,6 @@ body.cover-active {
 }
 
 /* HERO NAMES SPACING */
-.hero-names {
-  margin-bottom: 35px;
-}
 
 /* COUNTDOWN LABEL SPACING */
 .hero-countdown-label {
@@ -484,6 +450,52 @@ body.cover-active {
       0 0 16px rgba(245, 230, 200, 0.25);
   }
 }
+/* HERO NAMES – CLEAN FINAL VERSION */
+.hero-names {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  font-weight: 600;
+
+  white-space: nowrap;
+  margin: 24px 0 32px 0;
+
+  letter-spacing: 0.12em;   /* ✅ correct spacing (NOT 0.9em) */
+
+  opacity: 0;
+  animation: nameEnter 1.4s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+/* Mobile fit (safe scaling) */
+@media (max-width: 420px) {
+  .hero-names {
+    transform: scale(0.85);
+  }
+}
+
+/* Glow only on & */
+.hero-names .amp {
+  font-weight: 400;
+  margin: 0 6px;
+  color: #f3e6c8;
+  text-shadow:
+    0 0 6px rgba(243, 230, 200, 0.35),
+    0 0 14px rgba(243, 230, 200, 0.25);
+}
+
+/* Entrance animation */
+@keyframes nameEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
 
 
 
