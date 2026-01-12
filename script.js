@@ -26,7 +26,7 @@ lottie.loadAnimation({
 });
 
 // COUNTDOWN
-const weddingDate = new Date("2026-02-01T17:00:00");
+const weddingDate = new Date("2026-02-05T17:00:00");
 
 setInterval(() => {
   const now = new Date();
@@ -42,7 +42,7 @@ setInterval(() => {
 }, 1000);
 
 // LOCATION
-const locations = {
+/*const locations = {
   lagan: {
     venue: "MD PALACE , rewari",
     map: "https://maps.app.goo.gl/LnxtseDMNt4USsDWA",
@@ -89,7 +89,7 @@ buttons.forEach(btn => {
     void mapLink.offsetWidth; // force reflow
     mapLink.classList.add("pulse");
   });
-});
+});*/
 
 // SCROLL REVEAL ANIMATION
 const observer = new IntersectionObserver(
@@ -137,4 +137,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Desktop: click anywhere
   cover.addEventListener("click", enterInvitation, { once: true });
 });
+
 
