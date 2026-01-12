@@ -120,21 +120,40 @@
   </section>
 
   <!-- LOCATION -->
-  <section class="location animate-on-scroll">
-  <h2>Venue Locations</h2>
+ <section class="location animate-on-scroll" id="locations">
+  <h2 class="section-title">Venue Locations</h2>
 
-  <div class="location-buttons">
-    <button data-type="lagan">📍 Lagan Location</button>
-    <button data-type="wedding">📍 Wedding Location</button>
+  <div class="location-cards">
+
+    <!-- LAGAN -->
+    <div class="location-card">
+      <a
+        href="https://maps.app.goo.gl/LnxtseDMNt4USsDWA"
+        target="_blank"
+        class="map-button"
+      >
+        🗺 Map to Lagan Location
+      </a>
+      <p class="venue-name">
+        MD Palace, Rewari
+      </p>
+    </div>
+
+    <!-- WEDDING -->
+    <div class="location-card">
+      <a
+        href="https://maps.app.goo.gl/q92Qezh9k9zRQ8hZ7"
+        target="_blank"
+        class="map-button"
+      >
+        🗺 Map to Wedding Location
+      </a>
+      <p class="venue-name">
+        Utsav Vatika, Dwarka
+      </p>
+    </div>
+
   </div>
-
-  <div id="locationAnimation" class="lottie hidden"></div>
-
-  <a id="mapLink" target="_blank" class="map-button hidden">
-  </a>
-<p id="venueAddress" class="venue-address hidden"></p>
-
-
 </section>
 
   <footer>
@@ -144,6 +163,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
