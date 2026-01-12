@@ -357,6 +357,25 @@ body.cover-active {
     padding: 10px 18px;
   }
 }
+/* HERO MAIN DATE */
+.hero-main-date {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+/* HERO NAMES SPACING */
+.hero-names {
+  margin-bottom: 35px;
+}
+
+/* COUNTDOWN LABEL SPACING */
+.hero-countdown-label {
+  margin-bottom: 12px;
+}
+
 
 
 
