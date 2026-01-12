@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 cover.addEventListener("touchstart", enterInvitation, { once: true });
 cover.addEventListener("click", enterInvitation, { once: true });
 //cover
+// COVER ENTRY LOGIC — FINAL & CLEAN
 document.addEventListener("DOMContentLoaded", () => {
   const cover = document.getElementById("cover");
   if (!cover) return;
@@ -157,31 +158,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 800);
   }
 
-  // Mobile tap
+  // Mobile: tap anywhere
   cover.addEventListener("touchstart", enterInvitation, { once: true });
 
-  // Desktop click
+  // Desktop: click anywhere
   cover.addEventListener("click", enterInvitation, { once: true });
 });
-
-
-  
-
-  /* MOBILE touch cover remove */
-  // cover.addEventListener("touchstart", (e) => {
-    /*touchStartY = e.touches[0].clientY;
-  }, { passive: false });
-
-  cover.addEventListener("touchmove", (e) => {
-    const diffY = touchStartY - e.touches[0].clientY;
-
-    if (diffY > 50) {
-      enterInvitation();
-    }
-  }, { passive: false });
-});*/
-
-
-
-
-
