@@ -110,33 +110,6 @@ document.querySelectorAll(".animate-on-scroll").forEach(el => {
   observer.observe(el);
 });
 
-//cover
-document.addEventListener("DOMContentLoaded", () => {
-  const cover = document.getElementById("cover");
-  const enterBtn = document.getElementById("enterBtn");
-
-  if (!cover) return;
-
-  document.body.classList.add("cover-active");
-
-  let entered = false;
-  //let touchStartY = 0;
-
-  function enterInvitation() {
-    if (entered) return;
-    entered = true;
-
-    cover.classList.add("hide-cover");
-    document.body.classList.remove("cover-active");
-
-    setTimeout(() => {
-      cover.style.display = "none";
-    }, 800);
-  }
-  // ENTER SITE — works on mobile + desktop
-cover.addEventListener("touchstart", enterInvitation, { once: true });
-cover.addEventListener("click", enterInvitation, { once: true });
-//cover
 // COVER ENTRY LOGIC — FINAL & CLEAN
 document.addEventListener("DOMContentLoaded", () => {
   const cover = document.getElementById("cover");
@@ -164,3 +137,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // Desktop: click anywhere
   cover.addEventListener("click", enterInvitation, { once: true });
 });
+
