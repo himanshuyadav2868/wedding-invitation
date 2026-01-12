@@ -417,6 +417,48 @@ body.cover-active {
     margin-top: -20px;
   }
 }
+/* HERO SPECIAL DATE */
+.hero-main-date {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.4rem, 4vw, 2rem); /* lil extra size */
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+
+  color: #f5e6c8; /* soft ivory-gold */
+  text-shadow:
+    0 0 8px rgba(245, 230, 200, 0.4),
+    0 0 16px rgba(245, 230, 200, 0.25);
+
+  animation: datePulse 3.5s ease-in-out infinite;
+}
+@keyframes datePulse {
+  0% {
+    transform: scale(1);
+    text-shadow:
+      0 0 8px rgba(245, 230, 200, 0.4),
+      0 0 16px rgba(245, 230, 200, 0.25);
+  }
+
+  50% {
+    transform: scale(1.05);
+    text-shadow:
+      0 0 14px rgba(255, 235, 180, 0.6),
+      0 0 28px rgba(255, 235, 180, 0.35);
+  }
+
+  100% {
+    transform: scale(1);
+    text-shadow:
+      0 0 8px rgba(245, 230, 200, 0.4),
+      0 0 16px rgba(245, 230, 200, 0.25);
+  }
+}
+@media (max-width: 768px) {
+  .hero-main-date {
+    letter-spacing: 2px;
+  }
+}
+
 
 
 
