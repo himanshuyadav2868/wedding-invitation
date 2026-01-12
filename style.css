@@ -77,7 +77,7 @@ section {
 /* NAMES */
 .hero-names {
   font-family: "Playfair Display", serif;
-  font-size: clamp(2.6rem, 7vw, 4.2rem);
+  font-size: clamp(2.6rem, 7vw, 3.6rem);
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -458,6 +458,7 @@ body.cover-active {
     letter-spacing: 2px;
   }
 }
+
 
 
 
