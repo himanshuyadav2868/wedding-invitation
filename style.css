@@ -286,6 +286,21 @@ body.cover-active {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    background-position: center;
+  }
+
+  .hero-top {
+    font-size: 0.7rem;
+  }
+
+  .hero-date {
+    font-size: 1rem;
+  }
+}
+
+
 
 
 
