@@ -76,47 +76,42 @@ section {
 
 /* NAMES */
 /* HERO NAMES – FINAL POLISHED VERSION */
+/* HERO NAMES – FINAL FIXED VERSION */
 .hero-names {
   font-family: "Playfair Display", serif;
   font-size: 2.6rem;
   font-weight: 600;
 
-  white-space: nowrap;      /* force single line */
+  white-space: nowrap;
   max-width: 100%;
-  margin: 28px 0 32px 0;    /* refined spacing */
-  letter-spacing: 0.04em;
+  margin: 28px 0 32px 0;
+
+  letter-spacing: 0.12em; /* 👈 FIX: more breathing room */
 
   opacity: 0;
-  transform: translateY(14px);
   animation: nameEnter 1.4s ease-out forwards;
   animation-delay: 0.6s;
-}
-
-/* Mobile safety shrink */
-@media (max-width: 480px) {
-  .hero-names {
-    transform: scale(0.88) translateY(14px);
-  }
 }
 
 /* Ampersand glow only */
 .hero-names .amp {
   font-weight: 400;
-  margin: 0 6px;
+  margin: 0 8px;
   color: #f3e6c8;
   text-shadow:
     0 0 6px rgba(243, 230, 200, 0.35),
     0 0 14px rgba(243, 230, 200, 0.25);
 }
-
-/* Entrance animation */
 @keyframes nameEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.92); /* 👈 scale moved HERE */
+  }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
-
 /* TOGETHER LINE */
 .hero-together {
   font-family: "Montserrat", sans-serif;
@@ -488,6 +483,7 @@ body.cover-active {
     letter-spacing: 2px;
   }
 }
+
 
 
 
