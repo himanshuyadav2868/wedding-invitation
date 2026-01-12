@@ -64,6 +64,61 @@ section {
   color: #fff;
   padding: 20px;
 }
+/* HERO TAGLINE */
+.hero-tagline {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+/* NAMES */
+.hero-names {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.6rem, 7vw, 4.2rem);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero-names span {
+  font-weight: 400;
+  margin: 0 8px;
+}
+
+/* TOGETHER LINE */
+.hero-together {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  opacity: 0.95;
+}
+
+/* DATE */
+.hero-date {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+/* COUNTDOWN LABEL */
+.hero-countdown-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  opacity: 0.85;
+}
+
+/* HERO TIMER (already added earlier, just spacing tweak) */
+.hero-timer {
+  margin-bottom: 30px;
+}
+
 
 .lottie-bg {
   position: absolute;
@@ -302,6 +357,7 @@ body.cover-active {
     padding: 10px 18px;
   }
 }
+
 
 
 
