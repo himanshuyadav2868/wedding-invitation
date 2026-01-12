@@ -75,28 +75,46 @@ section {
 }
 
 /* NAMES */
-/* NAMES – FORCE SINGLE LINE */
+/* HERO NAMES – FINAL POLISHED VERSION */
 .hero-names {
   font-family: "Playfair Display", serif;
-  font-size: 2.6rem;          /* base size */
+  font-size: 2.6rem;
   font-weight: 600;
-  margin-bottom: 35px;
 
-  white-space: nowrap;        /* never wrap */
+  white-space: nowrap;      /* force single line */
   max-width: 100%;
+  margin: 28px 0 32px 0;    /* refined spacing */
+  letter-spacing: 0.04em;
+
+  opacity: 0;
+  transform: translateY(14px);
+  animation: nameEnter 1.4s ease-out forwards;
+  animation-delay: 0.6s;
 }
 
-/* Mobile scaling */
+/* Mobile safety shrink */
 @media (max-width: 480px) {
   .hero-names {
-    transform: scale(0.88);   /* 👈 magic fix */
+    transform: scale(0.88) translateY(14px);
   }
 }
 
-
-.hero-names span {
+/* Ampersand glow only */
+.hero-names .amp {
   font-weight: 400;
-  margin: 0 8px;
+  margin: 0 6px;
+  color: #f3e6c8;
+  text-shadow:
+    0 0 6px rgba(243, 230, 200, 0.35),
+    0 0 14px rgba(243, 230, 200, 0.25);
+}
+
+/* Entrance animation */
+@keyframes nameEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* TOGETHER LINE */
@@ -470,6 +488,7 @@ body.cover-active {
     letter-spacing: 2px;
   }
 }
+
 
 
 
