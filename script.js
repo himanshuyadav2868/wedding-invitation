@@ -146,8 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* MOBILE SWIPE */
-  cover.addEventListener("touchstart", (e) => {
+  /* MOBILE touch cover remove */
+   cover.addEventListener("touchstart", (e) => {
     touchStartY = e.touches[0].clientY;
   }, { passive: false });
 
@@ -159,4 +159,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { passive: false });
 });
+
+
 
