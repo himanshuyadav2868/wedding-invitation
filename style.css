@@ -562,6 +562,27 @@ body.cover-active {
   }
 }
 
+/* LOCATION BUTTONS LAYOUT */
+.location-cards {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Mobile: side by side */
+.location-card {
+  flex: 1;
+  max-width: 48%;
+}
+
+/* Desktop: normal size */
+@media (min-width: 769px) {
+  .location-card {
+    max-width: 260px;
+  }
+}
+
 
 
 
