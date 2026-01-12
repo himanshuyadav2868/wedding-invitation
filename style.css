@@ -75,13 +75,22 @@ section {
 }
 
 /* NAMES */
-/* NAMES */
+/* NAMES – FORCE SINGLE LINE */
 .hero-names {
   font-family: "Playfair Display", serif;
-  font-size: clamp(2rem, 5.5vw, 3rem); /* 👈 slightly smaller */
+  font-size: 2.6rem;          /* base size */
   font-weight: 600;
   margin-bottom: 35px;
-  white-space: nowrap; /* keep in one line */
+
+  white-space: nowrap;        /* never wrap */
+  max-width: 100%;
+}
+
+/* Mobile scaling */
+@media (max-width: 480px) {
+  .hero-names {
+    transform: scale(0.88);   /* 👈 magic fix */
+  }
 }
 
 
@@ -461,6 +470,7 @@ body.cover-active {
     letter-spacing: 2px;
   }
 }
+
 
 
 
