@@ -6,9 +6,13 @@
 }
 
 body {
-  background: #fafafa;
   color: #333;
   text-align: center;
+  
+  background-color: #fafafa;   /* base color */
+  background-image:
+    radial-gradient(circle at top, rgba(245, 230, 200, 0.35), transparent 60%),
+    linear-gradient(to bottom, #fafafa, #f4efe6);
 }
 
 section {
@@ -614,6 +618,64 @@ body {
     #f6f2ea
   );
 }
+/* ================= CINEMATIC PETALS + SPARKLES ================= */
+
+/* Hidden by default (cover visible) */
+.petals-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+
+  opacity: 0;
+  transition: opacity 1.2s ease;
+
+  background-image:
+    /* PETALS */
+    radial-gradient(circle at 15% -10%, rgba(255, 200, 220, 0.35) 2px, transparent 3px),
+    radial-gradient(circle at 45% -15%, rgba(255, 215, 230, 0.3) 2px, transparent 3px),
+    radial-gradient(circle at 75% -20%, rgba(255, 190, 210, 0.28) 2px, transparent 3px),
+
+    /* SPARKLES */
+    radial-gradient(circle, rgba(255, 255, 255, 0.45) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.35) 1px, transparent 2px);
+
+  background-size:
+    320px 320px,
+    420px 420px,
+    360px 360px,
+    280px 280px,
+    500px 500px;
+
+  animation: petalsFall 60s linear infinite;
+}
+
+/* Visible after entering site */
+.petals-layer.active {
+  opacity: 0.85;
+}
+
+/* Falling + drifting motion */
+@keyframes petalsFall {
+  from {
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+  to {
+    background-position:
+      60px 1600px,
+      -40px 1800px,
+      80px 2000px,
+      -30px 1500px,
+      50px 2200px;
+  }
+}
+
+
 
 
 
