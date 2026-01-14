@@ -675,6 +675,12 @@ body {
   100% { transform: translateX(0); }
 }
 
+.petals-layer {
+  opacity: 1 !important;
+}
+
+
+
 
 
 
