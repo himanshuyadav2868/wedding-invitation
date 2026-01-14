@@ -626,7 +626,6 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 9998;
-
   opacity: 0;
   transition: opacity 1.2s ease;
 }
@@ -640,44 +639,24 @@ body {
   height: 100%;
 }
 
-/* Individual petal animation */
 .petals-svg use {
   animation:
-    petalFall linear infinite,
-    petalDrift ease-in-out infinite;
-  transform-origin: center;
+    petalFall 28s linear infinite,
+    petalDrift 7s ease-in-out infinite;
 }
 
-/* RANDOM TIMINGS */
-.petals-svg use:nth-child(1) { animation-duration: 22s, 6s; }
-.petals-svg use:nth-child(2) { animation-duration: 28s, 8s; }
-.petals-svg use:nth-child(3) { animation-duration: 25s, 7s; }
-.petals-svg use:nth-child(4) { animation-duration: 32s, 9s; }
-.petals-svg use:nth-child(5) { animation-duration: 27s, 6s; }
-.petals-svg use:nth-child(6) { animation-duration: 30s, 8s; }
-.petals-svg use:nth-child(7) { animation-duration: 35s, 10s; }
-.petals-svg use:nth-child(8) { animation-duration: 24s, 7s; }
-
-/* Falling */
 @keyframes petalFall {
-  from {
-    transform: translateY(-10vh) rotate(0deg);
-  }
-  to {
-    transform: translateY(120vh) rotate(360deg);
-  }
+  from { transform: translateY(-10vh) rotate(0deg); }
+  to   { transform: translateY(120vh) rotate(360deg); }
 }
 
-/* Side drift */
 @keyframes petalDrift {
-  0%   { transform: translateX(0); }
-  50%  { transform: translateX(25px); }
+  0% { transform: translateX(0); }
+  50% { transform: translateX(30px); }
   100% { transform: translateX(0); }
 }
 
-.petals-layer {
-  background: rgba(255,0,0,0.1);
-}
+
 
 
 
