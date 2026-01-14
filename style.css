@@ -621,7 +621,7 @@ body {
 /* ================= CINEMATIC PETALS + SPARKLES ================= */
 
 /* ===== GLOBAL PETALS LAYER ===== */
-/* ========== CINEMATIC FALLING PETALS (BULLETPROOF) ========== */
+/* ========== CINEMATIC FALLING LEAVES ========== */
 
 .petals-layer {
   position: fixed;
@@ -633,71 +633,62 @@ body {
   transition: opacity 1.2s ease;
 }
 
-/* activate after cover */
 .petals-layer.active {
-  opacity: 1;
+  opacity: 0.55; /* soft & classy */
 }
 
-/* Petal layers */
+/* Shared leaf layers */
 .petals-layer::before,
 .petals-layer::after {
   content: "";
   position: absolute;
   inset: -200px 0 0 0;
-
   background-repeat: repeat;
-  animation: petalsFall linear infinite;
 }
 
-/* BIG petals */
+/* LARGE LEAVES */
 .petals-layer::before {
   background-image:
-    radial-gradient(ellipse at center,
-      rgba(255, 190, 210, 0.45) 40%,
-      transparent 42%);
-  background-size: 120px 120px;
-  animation-duration: 28s;
+    radial-gradient(
+      ellipse at 30% 20%,
+      rgba(190, 160, 120, 0.35) 35%,
+      transparent 42%
+    );
+  background-size: 120px 160px;
+  animation: leafFallSlow 55s linear infinite;
 }
 
-/* SMALL petals */
+/* SMALL LEAVES */
 .petals-layer::after {
   background-image:
-    radial-gradient(ellipse at center,
-      rgba(255, 200, 220, 0.35) 35%,
-      transparent 38%);
-  background-size: 80px 80px;
-  animation-duration: 42s;
+    radial-gradient(
+      ellipse at 60% 40%,
+      rgba(210, 180, 140, 0.25) 30%,
+      transparent 40%
+    );
+  background-size: 80px 120px;
+  animation: leafFallFast 75s linear infinite;
 }
 
-/* Falling animation */
-@keyframes petalsFall {
+/* 🍂 SLOW, DRIFTING LEAVES */
+@keyframes leafFallSlow {
   from {
-    transform: translateY(0);
+    transform: translateX(0) translateY(0) rotate(0deg);
   }
   to {
-    transform: translateY(140vh);
+    transform: translateX(80px) translateY(160vh) rotate(360deg);
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* 🍂 FASTER, OPPOSITE DRIFT */
+@keyframes leafFallFast {
+  from {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateX(-120px) translateY(180vh) rotate(-360deg);
+  }
+}
 
 
 
