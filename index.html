@@ -12,8 +12,12 @@
   <script src="https://unpkg.com/lottie-web/build/player/lottie.min.js"></script>
 </head>
 <body>
- <div class="petals-layer">
-  <svg class="petals-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+<div class="petals-layer">
+  <svg class="petals-svg"
+       viewBox="0 0 100 100"
+       preserveAspectRatio="none"
+       xmlns="http://www.w3.org/2000/svg"
+       xmlns:xlink="http://www.w3.org/1999/xlink">
 
     <defs>
       <symbol id="petal" viewBox="0 0 20 20">
@@ -21,24 +25,19 @@
           d="M10 0
              C15 5, 18 10, 10 20
              C2 10, 5 5, 10 0 Z"
-          fill="rgba(255, 185, 205, 0.65)"
+          fill="rgba(255,185,205,0.65)"
         />
       </symbol>
     </defs>
 
-    <!-- RANDOM PETALS -->
-    <use href="#petal" x="5"  y="-10" width="3" height="6" />
-    <use href="#petal" x="18" y="-40" width="6" height="10" />
-    <use href="#petal" x="32" y="-70" width="4" height="8" />
-    <use href="#petal" x="48" y="-20" width="7" height="12" />
-    <use href="#petal" x="60" y="-90" width="5" height="9" />
-    <use href="#petal" x="72" y="-50" width="3" height="6" />
-    <use href="#petal" x="85" y="-110" width="6" height="11" />
-    <use href="#petal" x="92" y="-30" width="4" height="7" />
+    <use xlink:href="#petal" x="10" y="-10" width="5" height="9" />
+    <use xlink:href="#petal" x="30" y="-40" width="7" height="12" />
+    <use xlink:href="#petal" x="50" y="-80" width="4" height="7" />
+    <use xlink:href="#petal" x="70" y="-20" width="6" height="10" />
+    <use xlink:href="#petal" x="90" y="-60" width="5" height="8" />
 
   </svg>
 </div>
-
 <!-- COVER / WELCOME SCREEN -->
 <section id="cover" class="cover">
   <img src="assets/images/cover.jpg" class="cover-media" alt="Himanshu & Barkha">
@@ -173,6 +172,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
