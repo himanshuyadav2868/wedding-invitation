@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       cover.style.display = "none";
+      document.querySelector(".petals-layer")?.classList.add("active");
     }, 800);
   }
 
@@ -137,5 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Desktop: click anywhere
   cover.addEventListener("click", enterInvitation, { once: true });
 });
+
 
 
