@@ -682,18 +682,24 @@ body {
 }
 
 
-/* MOBILE */
 @media (max-width: 480px) {
-  .events-frame {
-    margin: 50px 14px;
-    padding: 50px 20px;
+  .corner {
+    width: 180px;
+    opacity: 0.3;
   }
 
-  .corner {
-    width: 90px;
-    opacity: 0.35;
+  .corner.br,
+  .corner.bl {
+    bottom: -50px;
+  }
+
+  .corner.tr,
+  .corner.tl {
+    top: -50px;
   }
 }
+
+
 
 
 
