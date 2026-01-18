@@ -689,43 +689,45 @@ body {
 
 /* COMMON CORNER STYLE */
 /* FLORAL CORNERS — CLOSER TO CARD */
+/* FLORAL CORNERS — INSIDE FRAME */
 .corner {
   position: absolute;
-  width: 300px;
-  opacity: 0.38;
+  width: 240px;
+  opacity: 0.35;
   pointer-events: none;
 }
 
-/* Bottom right — original */
+/* Bottom right (original) */
 .corner.br {
   bottom: 0;
   right: 0;
-  transform: translate(15%, 15%);
+  transform: translate(-10%, -10%);
 }
 
-/* Bottom left — mirror X */
+/* Bottom left (mirror X) */
 .corner.bl {
   bottom: 0;
   left: 0;
-  transform: translate(-15%, 15%) scaleX(-1);
+  transform: translate(10%, -10%) scaleX(-1);
 }
 
-/* Top right — mirror Y */
+/* Top right (mirror Y) */
 .corner.tr {
   top: 0;
   right: 0;
-  transform: translate(15%, -15%) scaleY(-1);
+  transform: translate(-10%, 10%) scaleY(-1);
 }
 
-/* Top left — mirror both */
+/* Top left (mirror both) */
 .corner.tl {
   top: 0;
   left: 0;
-  transform: translate(-15%, -15%) scale(-1, -1);
+  transform: translate(10%, 10%) scale(-1, -1);
 }
+
 @media (max-width: 768px) {
   .corner {
-    width: 260px;       /* 👈 BIG like desktop */
+    width: 200px;       /* 👈 BIG like desktop */
     opacity: 0.35;
   }
 
@@ -771,6 +773,7 @@ body {
     margin: 22px auto;
   }
 }
+
 
 
 
