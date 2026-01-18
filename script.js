@@ -122,6 +122,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function enterInvitation() {
     if (entered) return;
     entered = true;
+    const music = document.getElementById("bgMusic");
+
+  // 🎵 autoplay music after user interaction
+  if (music) {
+    music.volume = 0.4;   // soft & classy
+    music.play().catch(() => {});
+  }
 
     cover.classList.add("hide-cover");
     document.body.classList.remove("cover-active");
@@ -138,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Desktop: click anywhere
   cover.addEventListener("click", enterInvitation, { once: true });
 });
+
 
 
 
