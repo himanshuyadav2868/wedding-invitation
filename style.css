@@ -652,7 +652,7 @@ body {
 
 /* EVENTS FRAME */
 .events-frame {
-   overflow: visible; 
+   overflow: hidden; 
   position: relative;
   max-width: 560px;
   margin: 90px auto;
@@ -690,85 +690,49 @@ body {
 /* COMMON CORNER STYLE */
 /* FLORAL CORNERS — CLOSER TO CARD */
 /* FLORAL CORNERS — INSIDE FRAME */
+/* FLORAL CORNERS — INSIDE INVITATION BOX */
 .corner {
   position: absolute;
-  width: 240px;
+  width: 200px;
   opacity: 0.35;
   pointer-events: none;
 }
 
-/* Bottom right (original) */
-.corner.br {
-  bottom: 0;
-  right: 0;
-  transform: translate(-10%, -10%);
-}
-
-/* Bottom left (mirror X) */
-.corner.bl {
-  bottom: 0;
-  left: 0;
-  transform: translate(10%, -10%) scaleX(-1);
-}
-
-/* Top right (mirror Y) */
-.corner.tr {
-  top: 0;
-  right: 0;
-  transform: translate(-10%, 10%) scaleY(-1);
-}
-
-/* Top left (mirror both) */
+/* TOP LEFT */
 .corner.tl {
   top: 0;
   left: 0;
-  transform: translate(10%, 10%) scale(-1, -1);
+  transform: rotate(180deg);
+}
+
+/* TOP RIGHT */
+.corner.tr {
+  top: 0;
+  right: 0;
+  transform: rotate(270deg);
+}
+
+/* BOTTOM LEFT */
+.corner.bl {
+  bottom: 0;
+  left: 0;
+  transform: rotate(90deg);
+}
+
+/* BOTTOM RIGHT (ORIGINAL) */
+.corner.br {
+  bottom: 0;
+  right: 0;
 }
 
 @media (max-width: 768px) {
   .corner {
-    width: 200px;       /* 👈 BIG like desktop */
-    opacity: 0.35;
-  }
-
-  /* Safe positioning using transform (no negative offsets) */
-  .corner.br {
-    bottom: 0;
-    right: 0;
-    transform: translate(35%, 35%);
-  }
-
-  .corner.bl {
-    bottom: 0;
-    left: 0;
-    transform: translate(-35%, 35%) scaleX(-1);
-  }
-
-  .corner.tr {
-    top: 0;
-    right: 0;
-    transform: translate(35%, -35%) scaleY(-1);
-  }
-
-  .corner.tl {
-    top: 0;
-    left: 0;
-    transform: translate(-35%, -35%) scale(-1, -1);
-  }
-}
-
-
-
-@media (max-width: 768px) {
-  .corner {
-    width: 180px;
+    width: 140px;   /* fits inside mobile card */
     opacity: 0.3;
   }
-
-  .event-row {
-    max-width: 260px;
-  }
 }
+
+
 
 
 
