@@ -1,4 +1,4 @@
-// HERO
+/*// HERO
 lottie.loadAnimation({
   container: document.getElementById("heroAnimation"),
   renderer: "svg",
@@ -23,7 +23,7 @@ lottie.loadAnimation({
   loop: true,
   autoplay: true,
   path: "animations/bride.json"
-});
+});*/
 
 // COUNTDOWN
 const weddingDate = new Date("2026-02-05T17:00:00");
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       cover.style.display = "none";
-      document.querySelector(".petals-layer")?.classList.add("active");
+      
     }, 800);
   }
 
@@ -159,6 +159,7 @@ cover.addEventListener(
 );
 
 });
+
 
 
 
