@@ -269,6 +269,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  pointer-events: auto;
 
   z-index: 2;
                 /* 👈 VERY IMPORTANT */
@@ -294,7 +295,7 @@ footer {
 .hide-cover {
   opacity: 0;
   transition: opacity 0.8s ease;
-  pointer-events: none;
+  
 }
 /* COVER CONTAINER — REQUIRED */
 .cover,
@@ -731,6 +732,7 @@ body {
     opacity: 0.3;
   }
 }
+
 
 
 
