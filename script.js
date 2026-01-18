@@ -122,14 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function enterInvitation() {
     if (entered) return;
     entered = true;
-    const music = document.getElementById("bgMusic");
-
-  // 🎵 autoplay music after user interaction
-  if (music) {
-    music.volume = 0.4;   // soft & classy
-    music.play().catch(() => {});
-  }
-
+    
     cover.classList.add("hide-cover");
     document.body.classList.remove("cover-active");
 
@@ -139,12 +132,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 800);
   }
 
-  // Mobile: tap anywhere
-  cover.addEventListener("touchstart", enterInvitation, { once: true });
+ cover.addEventListener(
+  "touchstart",
+  () => {
+    const music = document.getElementById("bgMusic");
+    if (music) {
+      music.volume = 0.4;
+      music.play().catch(() => {});
+    }
+    enterInvitation();
+  },
+  { once: true }
+);
 
-  // Desktop: click anywhere
-  cover.addEventListener("click", enterInvitation, { once: true });
+cover.addEventListener(
+  "click",
+  () => {
+    const music = document.getElementById("bgMusic");
+    if (music) {
+      music.volume = 0.4;
+      music.play().catch(() => {});
+    }
+    enterInvitation();
+  },
+  { once: true }
+);
+
 });
+
 
 
 
