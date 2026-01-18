@@ -631,37 +631,55 @@ body {
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
 }
 
-/* FLORAL CORNERS */
+/* EVENTS FRAME */
+.events-frame {
+  position: relative;
+  max-width: 560px;
+  margin: 90px auto;
+  padding: 60px 32px;
+
+  background: #fffdf8;
+  border-radius: 14px;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* COMMON CORNER STYLE */
 .corner {
   position: absolute;
-  width: 140px;
-  opacity: 0.45;
+  width: 150px;
+  opacity: 0.4;
   pointer-events: none;
 }
 
-/* Positioning + mirroring */
-.corner.tl {
-  top: -35px;
-  left: -35px;
+/* ORIGINAL — bottom right */
+.corner.br {
+  bottom: -30px;
+  right: -30px;
+  transform: none;
 }
 
-.corner.tr {
-  top: -35px;
-  right: -35px;
+/* MIRROR X — bottom left */
+.corner.bl {
+  bottom: -30px;
+  left: -30px;
   transform: scaleX(-1);
 }
 
-.corner.bl {
-  bottom: -35px;
-  left: -35px;
+/* MIRROR Y — top right */
+.corner.tr {
+  top: -30px;
+  right: -30px;
   transform: scaleY(-1);
 }
 
-.corner.br {
-  bottom: -35px;
-  right: -35px;
+/* MIRROR BOTH — top left */
+.corner.tl {
+  top: -30px;
+  left: -30px;
   transform: scale(-1, -1);
 }
+
 
 /* MOBILE */
 @media (max-width: 480px) {
@@ -675,6 +693,7 @@ body {
     opacity: 0.35;
   }
 }
+
 
 
 
