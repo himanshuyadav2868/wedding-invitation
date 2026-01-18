@@ -618,77 +618,7 @@ body {
     #f6f2ea
   );
 }
-/* ================= CINEMATIC PETALS + SPARKLES ================= */
 
-/* ===== GLOBAL PETALS LAYER ===== */
-/* ========== CINEMATIC FALLING LEAVES ========== */
-
-.petals-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9998;
-
-  opacity: 0;
-  transition: opacity 1.2s ease;
-}
-
-.petals-layer.active {
-  opacity: 0.55; /* soft & classy */
-}
-
-/* Shared leaf layers */
-.petals-layer::before,
-.petals-layer::after {
-  content: "";
-  position: absolute;
-  inset: -200px 0 0 0;
-  background-repeat: repeat;
-}
-
-/* LARGE LEAVES */
-.petals-layer::before {
-  background-image:
-    radial-gradient(
-      ellipse at 30% 20%,
-      rgba(190, 160, 120, 0.35) 35%,
-      transparent 42%
-    );
-  background-size: 120px 160px;
-  animation: leafFallSlow 55s linear infinite;
-}
-
-/* SMALL LEAVES */
-.petals-layer::after {
-  background-image:
-    radial-gradient(
-      ellipse at 60% 40%,
-      rgba(210, 180, 140, 0.25) 30%,
-      transparent 40%
-    );
-  background-size: 80px 120px;
-  animation: leafFallFast 75s linear infinite;
-}
-
-/* 🍂 SLOW, DRIFTING LEAVES */
-@keyframes leafFallSlow {
-  from {
-    transform: translateX(0) translateY(0) rotate(0deg);
-  }
-  to {
-    transform: translateX(80px) translateY(160vh) rotate(360deg);
-  }
-}
-
-/* 🍂 FASTER, OPPOSITE DRIFT */
-@keyframes leafFallFast {
-  from {
-    transform: translateX(0) translateY(0) rotate(0deg);
-  }
-  to {
-    transform: translateX(-120px) translateY(180vh) rotate(-360deg);
-  }
-}
 
 
 
