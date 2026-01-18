@@ -1,29 +1,3 @@
-/*// HERO
-lottie.loadAnimation({
-  container: document.getElementById("heroAnimation"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "animations/hero.json"
-});
-
-// GROOM
-lottie.loadAnimation({
-  container: document.getElementById("groomAnimation"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "animations/groom.json"
-});
-
-// BRIDE
-lottie.loadAnimation({
-  container: document.getElementById("brideAnimation"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "animations/bride.json"
-});*/
 
 // COUNTDOWN
 const weddingDate = new Date("2026-02-05T17:00:00");
@@ -41,55 +15,7 @@ setInterval(() => {
     `${d}d ${h}h ${m}m ${s}s`;
 }, 1000);
 
-// LOCATION
-/*const locations = {
-  lagan: {
-    venue: "MD PALACE , rewari",
-    map: "https://maps.app.goo.gl/LnxtseDMNt4USsDWA",
-    animation: "animations/lagan-location.json"
-  },
-  wedding: {
-    venue: "Utsav vatika , dwarka",
-    map: "https://maps.app.goo.gl/q92Qezh9k9zRQ8hZ7",
-    animation: "animations/wedding-location.json"
-  }
-};
-const buttons = document.querySelectorAll(".location-buttons button");
-const locationAnimContainer = document.getElementById("locationAnimation");
-const mapLink = document.getElementById("mapLink");
 
-let currentAnimation = null;
-
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const type = btn.dataset.type;
-    const data = locations[type];
-
-    // Reset animation container
-    locationAnimContainer.innerHTML = "";
-    locationAnimContainer.classList.remove("hidden");
-
-    if (currentAnimation) currentAnimation.destroy();
-
-    currentAnimation = lottie.loadAnimation({
-      container: locationAnimContainer,
-      renderer: "svg",
-      loop: false,
-      autoplay: true,
-      path: data.animation
-    });
-
-    // Update map button
-    mapLink.href = data.map;
-    mapLink.innerHTML = `🗺 Navigate to <strong>${data.venue}</strong>`;
-    mapLink.classList.remove("hidden");
-
-    // Trigger button animation
-    mapLink.classList.remove("pulse");
-    void mapLink.offsetWidth; // force reflow
-    mapLink.classList.add("pulse");
-  });
-});*/
 
 // SCROLL REVEAL ANIMATION
 const observer = new IntersectionObserver(
@@ -132,33 +58,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 800);
   }
 
- cover.addEventListener(
-  "touchstart",
-  () => {
-    const music = document.getElementById("bgMusic");
-    if (music) {
-      music.volume = 0.4;
-      music.play().catch(() => {});
-    }
-    enterInvitation();
-  },
-  { once: true }
-);
+ document.addEventListener("DOMContentLoaded", () => {
+  const cover = document.getElementById("cover");
+  const music = document.getElementById("bgMusic");
+  if (!cover || !music) return;
 
-cover.addEventListener(
-  "click",
-  () => {
-    const music = document.getElementById("bgMusic");
-    if (music) {
-      music.volume = 0.4;
-      music.play().catch(() => {});
-    }
-    enterInvitation();
-  },
-  { once: true }
-);
+  document.body.classList.add("cover-active");
+
+  let entered = false;
+
+  function enterInvitationUI() {
+    if (entered) return;
+    entered = true;
+
+    cover.classList.add("hide-cover");
+    document.body.classList.remove("cover-active");
+
+    setTimeout(() => {
+      cover.style.display = "none";
+    }, 800);
+  }
+
+  // 🔥 ANDROID-SAFE: DIRECT USER GESTURE
+  cover.ontouchstart = () => {
+    music.volume = 0.4;
+    music.play();      // MUST be first
+    enterInvitationUI();
+    cover.ontouchstart = null;
+  };
+
+  // Desktop fallback
+  cover.onclick = () => {
+    music.volume = 0.4;
+    music.play();
+    enterInvitationUI();
+    cover.onclick = null;
+  };
+});
+
 
 });
+
 
 
 
