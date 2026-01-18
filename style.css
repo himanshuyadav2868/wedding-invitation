@@ -592,14 +592,33 @@ body.cover-active {
   }
 }
 
+/* EVENT CARD — INVITE STYLE */
 .event-card {
-  animation: fadeUp 0.8s ease forwards;
+  background: transparent; /* no white box */
+  box-shadow: none;
+  border-radius: 0;
+
+  padding: 18px 10px;
+  margin: 0;
+
+  text-align: center;
 }
 
-.event-card:nth-child(1) { animation-delay: 0.1s; }
-.event-card:nth-child(2) { animation-delay: 0.2s; }
-.event-card:nth-child(3) { animation-delay: 0.3s; }
-.event-card:nth-child(4) { animation-delay: 0.4s; }
+/* Event titles */
+.event-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.35rem;
+  color: #4a3822;
+  margin-bottom: 6px;
+}
+
+/* Event text */
+.event-card p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  color: #5f5f5f;
+  margin: 3px 0;
+}
 
 @keyframes fadeUp {
   from {
@@ -644,43 +663,66 @@ body {
 
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
 }
+/* INNER GOLD BORDER */
+.events-frame::before {
+  content: "";
+  position: absolute;
+  inset: 14px; /* distance from edge */
+  border: 1px solid rgba(201, 178, 125, 0.6); /* soft gold */
+  border-radius: 10px;
+  pointer-events: none;
+}
+/* ORNAMENTAL DIVIDER */
+.ornamental-divider {
+  width: 140px;
+  height: 1px;
+  margin: 28px auto;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(201, 178, 125, 0.9),
+    transparent
+  );
+}
+
 
 /* COMMON CORNER STYLE */
+/* FLORAL CORNERS — CLOSER TO CARD */
 .corner {
   position: absolute;
   width: 300px;
-  opacity: 0.7;
+  opacity: 0.38;
   pointer-events: none;
 }
 
-/* ORIGINAL — bottom right */
+/* Bottom right — original */
 .corner.br {
-  bottom: -30px;
-  right: -30px;
-  transform: none;
+  bottom: 0;
+  right: 0;
+  transform: translate(15%, 15%);
 }
 
-/* MIRROR X — bottom left */
+/* Bottom left — mirror X */
 .corner.bl {
-  bottom: -30px;
-  left: -30px;
-  transform: scaleX(-1);
+  bottom: 0;
+  left: 0;
+  transform: translate(-15%, 15%) scaleX(-1);
 }
 
-/* MIRROR Y — top right */
+/* Top right — mirror Y */
 .corner.tr {
-  top: -30px;
-  right: -30px;
-  transform: scaleY(-1);
+  top: 0;
+  right: 0;
+  transform: translate(15%, -15%) scaleY(-1);
 }
 
-/* MIRROR BOTH — top left */
+/* Top left — mirror both */
 .corner.tl {
-  top: -30px;
-  left: -30px;
-  transform: scale(-1, -1);
+  top: 0;
+  left: 0;
+  transform: translate(-15%, -15%) scale(-1, -1);
 }
-
 @media (max-width: 768px) {
   .corner {
     width: 260px;       /* 👈 BIG like desktop */
@@ -716,11 +758,21 @@ body {
 
 
 @media (max-width: 768px) {
+  .corner {
+    width: 220px;
+    opacity: 0.32;
+  }
+
   .events-frame {
-    padding: 48px 18px;   /* 👈 reduced height */
-    margin: 50px 14px;
+    padding: 46px 18px;
+  }
+
+  .ornamental-divider {
+    margin: 22px auto;
   }
 }
+
+
 
 
 
