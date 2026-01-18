@@ -36,41 +36,27 @@ document.querySelectorAll(".animate-on-scroll").forEach(el => {
   observer.observe(el);
 });
 
-// COVER ENTRY LOGIC — FINAL & CLEAN
 document.addEventListener("DOMContentLoaded", () => {
   const cover = document.getElementById("cover");
+  const music = document.getElementById("bgMusic");
+
   if (!cover) return;
 
   document.body.classList.add("cover-active");
 
   let entered = false;
 
-  function enterInvitation() {
-    if (entered) return;
-    entered = true;
-    
-    cover.classList.add("hide-cover");
-    document.body.classList.remove("cover-active");
-
-    setTimeout(() => {
-      cover.style.display = "none";
-      
-    }, 800);
-  }
-
- document.addEventListener("DOMContentLoaded", () => {
-  const cover = document.getElementById("cover");
-  const music = document.getElementById("bgMusic");
-  if (!cover || !music) return;
-
-  document.body.classList.add("cover-active");
-
-  let entered = false;
-
-  function enterInvitationUI() {
+  function enterSite() {
     if (entered) return;
     entered = true;
 
+    // 🎵 Start music (ANDROID SAFE)
+    if (music) {
+      music.volume = 0.4;
+      music.play();
+    }
+
+    // Fade cover
     cover.classList.add("hide-cover");
     document.body.classList.remove("cover-active");
 
@@ -79,25 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 800);
   }
 
-  // 🔥 ANDROID-SAFE: DIRECT USER GESTURE
-  cover.ontouchstart = () => {
-    music.volume = 0.4;
-    music.play();      // MUST be first
-    enterInvitationUI();
-    cover.ontouchstart = null;
-  };
-
-  // Desktop fallback
-  cover.onclick = () => {
-    music.volume = 0.4;
-    music.play();
-    enterInvitationUI();
-    cover.onclick = null;
-  };
+  // ONE handler for ALL devices
+  cover.addEventListener("pointerdown", enterSite, { once: true });
 });
 
 
+
 });
+
 
 
 
