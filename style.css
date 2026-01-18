@@ -761,18 +761,16 @@ body {
 
 @media (max-width: 768px) {
   .corner {
-    width: 220px;
-    opacity: 0.32;
+    width: 180px;
+    opacity: 0.3;
   }
 
-  .events-frame {
-    padding: 46px 18px;
-  }
-
-  .ornamental-divider {
-    margin: 22px auto;
+  .event-row {
+    max-width: 260px;
   }
 }
+
+
 
 
 
