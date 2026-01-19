@@ -121,6 +121,7 @@ section {
 /* HERO TIMER (already added earlier, just spacing tweak) */
 .hero-timer {
   margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 
@@ -755,6 +756,7 @@ body {
 
   z-index: 5;
 }
+
 
 
 
