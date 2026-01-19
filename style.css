@@ -56,7 +56,7 @@ section {
 /* Content */
 .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 5;
 
   height: 100%;
   display: flex;
@@ -760,7 +760,7 @@ body {
 .hero-sparkles {
   position: absolute;
   inset: 0;
-  z-index: 2; /* above image, below text */
+  z-index: 4; /* above image, below text */
   pointer-events: none;
   overflow: hidden;
 }
@@ -807,6 +807,7 @@ body {
 .hero-sparkles span:nth-child(10){ left: 25%; animation-duration: 18s; animation-delay: 8s; }
 .hero-sparkles span:nth-child(11){ left: 55%; animation-duration: 14s; animation-delay: 6s; }
 .hero-sparkles span:nth-child(12){ left: 75%; animation-duration: 16s; animation-delay: 9s; }
+
 
 
 
