@@ -39,36 +39,32 @@ document.querySelectorAll(".animate-on-scroll").forEach(el => {
 document.addEventListener("DOMContentLoaded", () => {
   const cover = document.getElementById("cover");
   const music = document.getElementById("bgMusic");
+  const enterBtn = document.getElementById("enterBtn");
 
-  if (!cover) return;
+  if (!cover || !enterBtn) return;
 
   document.body.classList.add("cover-active");
 
   let entered = false;
 
-  function enterSite() {
+  enterBtn.addEventListener("click", () => {
     if (entered) return;
     entered = true;
 
-    // 🎵 Start music (ANDROID SAFE)
+    // 🎵 ANDROID-PROOF AUDIO
     if (music) {
       music.volume = 0.4;
       music.play();
     }
 
-    // Fade cover
     cover.classList.add("hide-cover");
     document.body.classList.remove("cover-active");
 
     setTimeout(() => {
       cover.style.display = "none";
     }, 800);
-  }
-
-  // ONE handler for ALL devices
-  cover.addEventListener("pointerdown", enterSite, { once: true });
+  });
 });
-
 
 
 
