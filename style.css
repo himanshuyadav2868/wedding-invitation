@@ -733,6 +733,31 @@ body {
   }
 }
 
+/* BIG ENTER BUTTON */
+.enter-btn {
+  all: unset;
+  cursor: pointer;
+
+  padding: 18px 28px;
+  border-radius: 50px;
+
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+
+  color: #fff;
+  background: rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+  z-index: 5;
+}
+
+
+
 
 
 
